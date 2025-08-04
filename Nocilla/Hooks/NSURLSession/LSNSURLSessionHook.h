@@ -6,7 +6,11 @@
 //  Copyright (c) 2014 Luis Solano Bonet. All rights reserved.
 //
 
+#if SWIFT_PACKAGE
+#import <Nocilla.h>
+#else
 #import <Nocilla/Nocilla.h>
+#endif
 
 #import "LSHTTPClientHook.h"
 

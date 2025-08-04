@@ -14,6 +14,19 @@ FOUNDATION_EXPORT double NocillaVersionNumber;
 //! Project version string for Nocilla.
 FOUNDATION_EXPORT const unsigned char NocillaVersionString[];
 
+#if SWIFT_PACKAGE
+#import <LSHTTPBody.h>
+#import <LSMatcheable.h>
+#import <LSMatcher.h>
+#import "LSNocilla.h"
+#import <LSStubRequestDSL.h>
+#import <LSStubResponseDSL.h>
+#import <NSData+Matcheable.h>
+#import <NSData+Nocilla.h>
+#import <NSRegularExpression+Matcheable.h>
+#import <NSString+Matcheable.h>
+#import <NSString+Nocilla.h>
+#else
 #import <Nocilla/LSHTTPBody.h>
 #import <Nocilla/LSMatcheable.h>
 #import <Nocilla/LSMatcher.h>
@@ -25,3 +38,4 @@ FOUNDATION_EXPORT const unsigned char NocillaVersionString[];
 #import <Nocilla/NSRegularExpression+Matcheable.h>
 #import <Nocilla/NSString+Matcheable.h>
 #import <Nocilla/NSString+Nocilla.h>
+#endif

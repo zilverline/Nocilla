@@ -13,10 +13,20 @@ let package = Package(
     .target(
       name: "Nocilla",
       path: "Nocilla",
-      publicHeadersPath:"include",
-//      cSettings: [
-//        .headerSearchPath("./**"),
-//      ]
+      exclude: ["Nocilla.h"],
+      publicHeadersPath: "include",
+      cSettings: [
+        .headerSearchPath("Categories"),
+        .headerSearchPath("DSL"),
+        .headerSearchPath("Hooks"),
+        .headerSearchPath("Hooks/ASIHTTPRequest"),
+        .headerSearchPath("Hooks/NSURLRequest"),
+        .headerSearchPath("Hooks/NSURLSession"),
+        .headerSearchPath("Matchers"),
+        .headerSearchPath("Model"),
+        .headerSearchPath("Stubs"),
+        .headerSearchPath("."),
+      ]
     ),
     .testTarget(
       name: "NocillaTests",

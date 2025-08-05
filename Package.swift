@@ -4,6 +4,10 @@ import PackageDescription
 let package = Package(
   name: "Nocilla",
   defaultLocalization: "en",
+  platforms: [
+    .macOS(.v10_15),
+    .iOS(.v12)
+  ],
   products: [
     .library(
       name: "Nocilla",
@@ -14,19 +18,7 @@ let package = Package(
       name: "Nocilla",
       path: "Nocilla",
       exclude: ["Nocilla.h"],
-      publicHeadersPath: "include",
-      cSettings: [
-        .headerSearchPath("Categories"),
-        .headerSearchPath("DSL"),
-        .headerSearchPath("Hooks"),
-        .headerSearchPath("Hooks/ASIHTTPRequest"),
-        .headerSearchPath("Hooks/NSURLRequest"),
-        .headerSearchPath("Hooks/NSURLSession"),
-        .headerSearchPath("Matchers"),
-        .headerSearchPath("Model"),
-        .headerSearchPath("Stubs"),
-        .headerSearchPath("."),
-      ]
+      publicHeadersPath: "include"
     ),
     .testTarget(
       name: "NocillaTests",
